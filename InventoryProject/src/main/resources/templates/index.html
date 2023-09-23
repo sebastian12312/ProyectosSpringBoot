@@ -2,9 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logos/logo-official.png" type="image/x-icon">
+    <title>Ministerio Publico - Lima Este</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="fuente/fuente.css">
 </head>
 <body>
-<h1>hola</h1>
+
+<div class="contenedor_login_admin" >
+    <div class="contenedor_formulario_login">
+        <form action="" class="formulario_login_administrador">
+            <div class="titulo_formulario_login_admin">
+                <img src="img/logos/logo-2.png" alt="" style="display: none">
+                <a>¡Hola! ¡Bienvenido/a de vuelta! </a>
+                <a> ¡Listo/a para trabajar!</a>
+                <span>Ingrese para iniciar su sesión</span>
+            </div>
+
+            <div class="datos_usuario_admin">
+                <label for="">usuario*:</label>
+                <input type="text" placeholder="ingrese su usuario...">
+            </div>
+            <div class="datos_usuario_admin">
+                <label for="">contrasena*:</label>
+                <input type="password" placeholder="ingrese su contrasena...">
+            </div>
+            <div class="datos_usuario_help">
+                <a id="contacto_administrador">Olvidastes tu contrasena? comunicate con el administrador.</a>
+            </div>
+            <div class="buttom_usuario_admin">
+                <input type="submit" value="Ingresar">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="modal_administrador contenedor_contacto_administrador" id="contenedor_contacto_administrador" style="display: none;">
+    <div class="contacto_administrador">
+        <form action="" class="formulario_contacto_administrador">
+            <div class="datos_contacto_administrador">
+                <label for="">Ingrese su correo Electronico*:</label>
+                <input type="text" placeholder="ingrese su correo electronico...">
+            </div>
+            <div class="btn_contacto_administrador">
+                <input type="submit" value="Enviar datos">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="js/login.js"></script>
+
 </body>
 </html>

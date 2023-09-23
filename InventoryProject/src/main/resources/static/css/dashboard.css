@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    
+}
+/*header*/
+.contenedor_header{
+    background-color: #ffff;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+.header{
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    gap: 20px;  
+}
+.contenedor_header_1 a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: rgb(7, 7, 7);
+    display: flex;
+    gap: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    max-width: 230px;
+    overflow: hidden;
+}
+.contenedor_header_1 i,span{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.contenedor_header_2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;    
+}
+.div1_header_2, .div2_header_2 { 
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    gap: 20px;
+}
+.div1_header_2 a{
+    color: #6c7383;
+    font-size: 1.3rem ;
+}
+.div2_header_2 a{
+    color: #6c7383;
+    font-size: 1.3rem ;
+}
+/*body*/
+.contendor_body{
+    display: flex;
+    justify-content: space-between;
+}
+.contenedor_menu_dashboard{
+    background-color: #FFFF;
+    width:300px;
+    height: 100vh;
+}
+.menu_dashboard{
+    display: block; 
+    margin-top: 20px;   
+}
+.opcion_menu{  
+    border-radius: 5px;    
+  
+    margin: 20px;
+}
+.opcion_menu a {
+    display: flex;  
+    justify-content: space-between;
+    text-decoration:none;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: #6c7383;
+    padding: 8px 15px;
+    border-radius: 5px;    
+}
+.opcion_menu a:hover{
+    background-color:#032a5a;
+    color: rgb(248, 248, 248);
+}
+
+/*body*/
+.contenedor_body_dashbord{
+    background-color: #eeee;
+    width: 100%;
+    padding: 0% 3%;
+}
+a{
+    cursor: pointer;
+}
+
+@media (max-width:800px) {
+    .contenedor_menu_dashboard{
+        width: 100px;
+    }
+    .positio_izquierda span, .positio_derecha{
+        display: none;
+    }
+}
+
+@media (max-width:350px) {
+    body{
+        width: 350px;
+    }
+}

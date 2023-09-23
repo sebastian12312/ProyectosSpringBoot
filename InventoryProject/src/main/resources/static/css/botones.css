@@ -1,0 +1,33 @@
+.boton_table_dashboard{
+    margin-top: 40px;
+    margin-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.boton_table_dashboard a{      
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*colores botones table dashboard*/
+.diseño_boton_1{
+    background-color: rgb(0, 140, 255);
+    color: white;
+}
+.diseño_boton_2{
+    background-color: rgb(255, 145, 0);
+    color: white;
+}
+.diseño_boton_3{
+    background-color: rgb(255, 17, 0);
+    color: white;
+}
+@media (max-width: 1200px){
+    .boton_table_dashboard{
+        justify-content: center;
+    }
+}
