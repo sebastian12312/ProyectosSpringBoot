@@ -1,4 +1,4 @@
-package com.project.usuarios;
+package com.proyecto.inventario.clases;
 import lombok.Data;
 
 import java.time.LocalDate;
