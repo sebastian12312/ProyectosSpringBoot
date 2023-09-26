@@ -5,16 +5,16 @@ import lombok.Data;
 import java.util.Date;
 
 
-@Entity
-@Table(name="Usuario")
 @Data
-public class Usuario {
+@Entity
+@Table (name = "Usuarios")
+public class Usuarios {
 
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
-    private Integer id;
+    private Integer ID;
 
-    private String  CodigUsuario;
+    private String  CodigoUsuario;
     private String  TipoDocumento;
     private String  Nombre;
     private String  Apellido;

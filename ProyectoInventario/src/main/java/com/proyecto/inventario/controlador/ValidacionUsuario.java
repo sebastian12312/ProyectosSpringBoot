@@ -1,6 +1,6 @@
 package com.proyecto.inventario.controlador;
 
-import com.proyecto.inventario.clases.Usuario;
+import com.proyecto.inventario.clases.Usuarios;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +11,7 @@ public class ValidacionUsuario {
 
 
     @RequestMapping("/login")
-    public List<Usuario> getUsuario() {
+    public List<Usuarios> getUsuario() {
 
         return null;
     }
