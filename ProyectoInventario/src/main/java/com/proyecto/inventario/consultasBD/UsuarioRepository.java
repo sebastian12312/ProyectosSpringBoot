@@ -13,5 +13,5 @@ public interface UsuarioRepository extends JpaRepository<Usuarios,String> {
     List<Usuarios> findUsuarios();
 
     @Query("SELECT u FROM Usuarios u WHERE u.numero_documento = :numero_documento ")
-    List<Usuarios>  findUserByCodigo(@Param("numero_documento") String numero_documento);
+    Usuarios  findUserByCodigo(@Param("numero_documento") String numero_documento);
 }

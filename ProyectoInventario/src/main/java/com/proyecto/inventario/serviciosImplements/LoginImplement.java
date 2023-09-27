@@ -17,15 +17,12 @@ public class LoginImplement implements LoginService {
     private UsuarioRepository usuarioRepository;
     @Override
     public Usuarios validacionUsuario(String numero_documento, String contraseña) {
-    List<Usuarios> usuario = usuarioRepository.findUserByCodigo(numero_documento);
-    Usuarios responseUsuario = new Usuarios();
-    if(usuario.size()>0){
-            boolean response = usuario.get(0).getContraseña().equals(contraseña);
-            responseUsuario.setEstado_usuario("ok");
-            responseUsuario.setFecha_nacimiento(":121212");
-    }else{
-        responseUsuario.setEstado_usuario("error");
-    }
-        return responseUsuario;
+        Usuarios respuestaUsuario =  usuarioRepository.findUserByCodigo(numero_documento);
+        if(respuestaUsuario.getContraseña().equals(contraseña)){
+            return  respuestaUsuario;
+        } else{
+            return  null;
+        }
+
     }
 }

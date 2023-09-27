@@ -16,5 +16,6 @@ public class UsuarioImplement implements UsuarioService{
     @Override
     public List<Usuarios> listarUSuario() {
         return usuarioRepository.findUsuarios();
+
     }
 }

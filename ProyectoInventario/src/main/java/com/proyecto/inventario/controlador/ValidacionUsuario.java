@@ -6,11 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
+
 @Controller
 @Service
 @Slf4j
@@ -22,12 +19,24 @@ public class ValidacionUsuario {
     @PostMapping("/login")
     public String ValidacionLogin(@RequestParam String numero_documento,@RequestParam String passoword) {
         Usuarios respuestaUsuario = loginService.validacionUsuario(numero_documento,passoword);
-        if(respuestaUsuario.getEstado_usuario().equals("ok")){
-        log.info("ok");
-            log.info("fecha nacimiento",respuestaUsuario.getFecha_nacimiento());
+        if(respuestaUsuario != null){
+          if (respuestaUsuario.getId_rol().equals(1)){
+
+              return "redirect:/administration/"+respuestaUsuario.getNumero_documento()+"";
+          }else if  (respuestaUsuario.getId_rol().equals(2)){
+              return "redirect:/home/dashboard";
+          }
         }else{
             log.error("error");
+            return "redirect:/auth/administration";
         }
-        return "redirect:/auth";
+
+        return "redirect:/";
+    }
+
+
+    @GetMapping("/error")
+    public String redirectionNull(){
+        return "web/index";
     }
 }

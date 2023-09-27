@@ -12,11 +12,17 @@ import java.util.List;
 
 @RestController
 @Slf4j
+@RequestMapping("/home")
 public class UsuarioController {
 
    @Autowired
     private UsuarioService usuarioService;
 
+   //redireccionamiento de ValidacionUsuarion del user
+   @GetMapping("/dashboard")
+    public String redirectionUsuario(){
+        return "dashboard/dashboard";
+    }
    @RequestMapping (value = "/listar")
     public List<Usuarios> Listar(){
        List<Usuarios> List = usuarioService.listarUSuario();
