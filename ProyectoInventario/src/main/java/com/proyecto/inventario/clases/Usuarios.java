@@ -12,17 +12,18 @@ public class Usuarios {
 
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
-    private Integer ID;
+    private String codigo_usuario;
 
-    private String  CodigoUsuario;
-    private String  TipoDocumento;
-    private String  Nombre;
-    private String  Apellido;
-    private String  Telefono;
-    private String  CorreoPersonal;
-    private String  Contraseña;
-    private String  ContraseñaRespaldo;
-    private Date    FechaNacimiento;
-    private String  IDCargo;
-    private String  EstadoUsuario;
+    private Integer  tipo_documento;
+    private String  numero_documento;
+    private String  nombre;
+    private String  apellido;
+    private String  telefono;
+    private String  correo_personal;
+    private String  contraseña;
+    private String  contraseña_respaldo;
+    private String    fecha_nacimiento;
+    private String  id_dependencia;
+    private Integer  id_rol;
+    private String estado_usuario;
 }

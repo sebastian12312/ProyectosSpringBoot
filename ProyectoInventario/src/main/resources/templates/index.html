@@ -13,7 +13,7 @@
 
 <div class="contenedor_login_admin" >
     <div class="contenedor_formulario_login">
-        <form action="" class="formulario_login_administrador">
+        <form action="/auth/login" method="post" class="formulario_login_administrador">
             <div class="titulo_formulario_login_admin">
                 <img src="img/logos/logo-2.png" alt="" style="display: none">
                 <a>¡Hola! ¡Bienvenido/a de vuelta! </a>
@@ -23,11 +23,11 @@
 
             <div class="datos_usuario_admin">
                 <label for="">usuario*:</label>
-                <input type="text" placeholder="ingrese su usuario...">
+                <input type="text" placeholder="ingrese su usuario..." name="numero_documento">
             </div>
             <div class="datos_usuario_admin">
                 <label for="">contrasena*:</label>
-                <input type="password" placeholder="ingrese su contrasena...">
+                <input type="password" placeholder="ingrese su contrasena..." name="passoword">
             </div>
             <div class="datos_usuario_help">
                 <a id="contacto_administrador">Olvidastes tu contrasena? comunicate con el administrador.</a>

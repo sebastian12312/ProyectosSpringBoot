@@ -13,6 +13,8 @@
       <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/inventario/ProyectoInventarioApplication.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/inventario/clases/Usuarios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/inventario/servicios/LoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/inventario/serviciosImplements/LoginImplement.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/botones.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/cards.css" afterDir="false" />
@@ -26,6 +28,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/logos/logo-2.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/logos/logo-official.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/js.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/validacionLogin.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/com/proyecto/inventario/ProyectoInventarioApplicationTests.java" afterDir="false" />
     </list>
@@ -38,12 +41,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -78,7 +83,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/SEBASTIAN/Desktop/Taniguchi",
+    "last_opened_file_path": "C:/Users/sebastian/Desktop/Project-Aduni-main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -109,6 +114,7 @@
       <workItem from="1695653354192" duration="3688000" />
       <workItem from="1695658884955" duration="8186000" />
       <workItem from="1695676758730" duration="352000" />
+      <workItem from="1695789281883" duration="5395000" />
     </task>
     <servers />
   </component>
