@@ -15,12 +15,10 @@ public class WebController {
     public String index(){
         return "web/index";
     }
-    @GetMapping("/administration/{}")
-    public String redirectionAdministration(){
-        return "administrator/administrator";
-    }
-    @GetMapping("/dashboard/{}")
-    public String redirectionUsuario(){
-        return "administrator/administrator";
+
+    @GetMapping(value = "/dashboard")
+    public String redirectionAdministrator() {
+
+        return "administrator/dashboard";
     }
 }

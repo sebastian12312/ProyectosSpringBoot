@@ -6,11 +6,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
 
-@RestController
+@Controller
 @Slf4j
 @RequestMapping("/home")
 public class UsuarioController {
@@ -19,17 +20,16 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
    //redireccionamiento de ValidacionUsuarion del user
-   @GetMapping("/dashboard")
+   @GetMapping("/")
     public String redirectionUsuario(){
-        return "dashboard/dashboard";
+        return "usuario/home";
     }
-   @RequestMapping (value = "/listar")
+   @GetMapping (value = "/listar")
     public List<Usuarios> Listar(){
        List<Usuarios> List = usuarioService.listarUSuario();
        int cantidad = List.size();
        log.info("cantidad"+String.valueOf(cantidad));
        return List;
    }
-
 
 }

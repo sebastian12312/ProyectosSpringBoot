@@ -18,7 +18,7 @@ public class LoginImplement implements LoginService {
     @Override
     public Usuarios validacionUsuario(String numero_documento, String contraseña) {
         Usuarios respuestaUsuario =  usuarioRepository.findUserByCodigo(numero_documento);
-        if(respuestaUsuario.getContraseña().equals(contraseña)){
+        if(respuestaUsuario.getContraseña() != null){
             return  respuestaUsuario;
         } else{
             return  null;

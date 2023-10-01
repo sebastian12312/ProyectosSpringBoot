@@ -1,61 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="shortcut icon" href="img/logos/logo-official.png" type="image/x-icon"> -->
-    <title>Titulo proyecto</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="fuente/fuente.css">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-
-<div class="contenedor_login_admin" >
-    <div class="contenedor_formulario_login">
-        <form action="/auth/login" method="post" class="formulario_login_administrador">
-            <div class="titulo_formulario_login_admin">
-                <img src="img/logos/logo-2.png" alt="" style="display: none">
-                <a>¡Hola! ¡Bienvenido/a de vuelta! </a>
-                <a> ¡Listo/a para trabajar!</a>
-                <span>Ingrese para iniciar su sesión</span>
-            </div>
-
-            <div class="datos_usuario_admin">
-                <label for="">usuario*:</label>
-                <input type="text" placeholder="ingrese su usuario..." name="numero_documento">
-            </div>
-            <div class="datos_usuario_admin">
-                <label for="">contrasena*:</label>
-                <input type="password" placeholder="ingrese su contrasena..." name="passoword">
-            </div>
-            <div class="datos_usuario_help">
-                <a id="contacto_administrador">Olvidastes tu contrasena? comunicate con el administrador.</a>
-            </div>
-            <div class="buttom_usuario_admin">
-                <input type="submit" value="Ingresar">
-            </div>
-        </form>
+<div class="container  h-100">
+    <div class="row justify-content-center">
+        <div class="col-md-6 border rounded p-5 bg-light">
+            <form action="auth/login" method="POST">
+                <div class="mb-3">
+                    <label for="usuario" class="form-label">Ingrese su usuario</label>
+                    <input type="text" class="form-control" id="usuario" name="numero_documento">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Ingrese su contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-
-
-<div class="modal_administrador contenedor_contacto_administrador" id="contenedor_contacto_administrador" style="display: none;">
-    <div class="contacto_administrador">
-        <form action="" class="formulario_contacto_administrador">
-            <div class="datos_contacto_administrador">
-                <label for="">Ingrese su correo Electronico*:</label>
-                <input type="text" placeholder="ingrese su correo electronico...">
-            </div>
-            <div class="btn_contacto_administrador">
-                <input type="submit" value="Enviar datos">
-            </div>
-        </form>
-    </div>
-</div>
-
-
-<script src="js/login.js"></script>
 
 </body>
 </html>
+
