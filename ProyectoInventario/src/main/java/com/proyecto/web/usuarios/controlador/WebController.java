@@ -1,4 +1,4 @@
-package com.proyecto.inventario.controlador;
+package com.proyecto.web.usuarios.controlador;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

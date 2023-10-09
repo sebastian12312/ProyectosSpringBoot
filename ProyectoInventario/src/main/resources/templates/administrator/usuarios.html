@@ -207,7 +207,6 @@
             <li class="nav-item dropdown pe-3">
 
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
                     <span class="d-none d-md-block dropdown-toggle ps-2 ">Sebastian BG</span>
                 </a><!-- End Profile Iamge Icon -->
 
@@ -412,8 +411,8 @@
                 <td th:text="${usuarios.correo_personal}"></td>
                 <td th:text="${usuarios.estado_usuario}"></td>
                 <td>
-                    <a data-bs-toggle="modal" data-bs-target="#editarUsuario" th:href="@{/administrador/buscar/{numero_documento}(numero_documento=${usuarios.numero_documento})}" class="btn btn-dark"><i class="bi bi-folder"></i></a>
-                    <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                    <button  type="button" class="btn btn-dark valorEdit" th:value="@{{numero_documento}(numero_documento=${usuarios.numero_documento})}"><i class="bi bi-folder"></i></button>
+                    <a class="btn btn-danger" th:href="@{/administrador/usuario/eliminar/{codigo_usuario}(codigo_usuario=${usuarios.codigo_usuario})}" ><i class="bi bi-trash"></i></a>
                 </td>
 
             </tr>
@@ -423,7 +422,7 @@
     </section>
 
 </main><!-- End #main -->
-<!-- modal -->
+<!-- modal  registrar-->
 <div class="modal fade modal-xl p-2" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl p-2">
         <div class="modal-content">
@@ -432,63 +431,66 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form class="row g-3" method="post" action="/administrador/registrar">
+                <!--FORMULARIO-->
+                <form class="row g-3" method="post" action="/administrador/usuario/registrar">
                     <div class="col-md-6">
-                        <label for="inputState" class="form-label">Tipo Documento</label>
-                        <select id="inputState" class="form-select" name="tipo_docuemento">
-                            <option selected>VALORES...</option>
-                            <option value="1">DNI</option>
-                            <option value="2">RUC</option>
-                            <option value="3">PASAPORTE</option>
-                            <option value="4">CARNET DE EXTRANJERIA</option>
+                        <label for="" class="form-label">Tipo Documento</label>
+                        <select class="form-select tipo_documento" name="tipo_documento" type="number">
+                            <option selected>selecciona...</option>
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label for="inputName5" class="form-label">Nro Documento</label>
-                        <input type="text" class="form-control" id="inputName5" name="numero_documento">
+                        <label for="" class="form-label">Nro Documento</label>
+                        <input type="text" class="form-control" name="numero_documento" placeholder="Ingrese su nro de documento...">
                     </div>
                     <div class="col-md-4">
-                        <label for="inputEmail5" class="form-label">Nombre</label>
-                        <input type="email" class="form-control" id="inputEmail5" name="nombre">
+                        <label for="" class="form-label">Nombre</label>
+                        <input type="text" class="form-control"  name="nombre" placeholder="Ingrese nombre del usuario...">
                     </div>
                     <div class="col-md-4">
-                        <label for="inputPassword5" class="form-label">Apellido</label>
-                        <input type="password" class="form-control" id="inputPassword5" name="apellido">
+                        <label for="" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" name="apellido" placeholder="Ingrese apellido del usuario...">
                     </div>
                     <div class="col-4">
-                        <label for="inputAddress5" class="form-label">Telefono</label>
-                        <input type="text" class="form-control" id="inputAddres5s" placeholder="1234 Main St" name="telefono">
+                        <label for="" class="form-label">Telefono</label>
+                        <input type="text" class="form-control"  placeholder="Ingrese telefono del usuario" name="telefono" >
                     </div>
                     <div class="col-4">
-                        <label for="inputAddress5" class="form-label">Correo</label>
-                        <input type="text" class="form-control" id="inputAddres5s" placeholder="1234 Main St" name="correo_personal">                    </div>
+                        <label for="" class="form-label">Correo</label>
+                        <input type="text" class="form-control" id="inputAddres5s" placeholder="Ingrese correo del usuario..." name="correo_personal">
+                    </div>
                     <div class="col-4">
-                        <label for="inputAddress2" class="form-label">Password</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name="contraseña">
+                        <label for="" class="form-label">Password</label>
+                        <input type="text" class="form-control"  placeholder="Ingrese password del usuario..." name="contraseña">
                     </div>
                     <div class="col-md-4">
                         <label for="inputCity" class="form-label">Fecha nacimiento</label>
                         <input type="date" class="form-control" id="inputCity" name="fecha_nacimiento">
                     </div>
                     <div class="col-md-4">
-                        <label for="inputState" class="form-label">dependencia</label>
-                        <select id="inputState" class="form-select" name="id_dependencia">
-                            <option selected>Choose...</option>
+                        <label for="" class="form-label">dependencia</label>
+                        <select  class="form-select" name="id_dependencia">
+                            <option selected>selecciona...</option>
                             <option value="1">1FPPCS</option>
+                            <option value="2">2FPPCS</option>
+                            <option value="3">3FPPCS</option>
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <label for="inputState" class="form-label">Roles</label>
-                        <select id="inputState" class="form-select" name="id_rol">
-                            <option selected>Choose...</option>
+                        <label for="" class="form-label">Roles</label>
+                        <select  class="form-select" name="id_rol" type="number">
+                            <option selected>selecciona...</option>
                             <option value="1">admin</option>
+                            <option value="2">usuario</option>
+                            <option value="3">superadmin</option>
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <label for="inputState" class="form-label">Estado</label>
-                        <select id="inputState" class="form-select" name="estado_usuario">
-                            <option selected>Choose...</option>
+                        <label for="" class="form-label">Estado</label>
+                        <select id="" class="form-select" name="estado_usuario">
+                            <option selected>selecciona...</option>
                             <option value="1">ACTIVO</option>
+                            <option value="2">SUSPENDIDO</option>
                         </select>
                     </div>
                     <div class="text-center">
@@ -506,67 +508,70 @@
     <div class="modal-dialog modal-xl p-2">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="editarUsuario">Editar Usuario</h1>
+                <h1 class="modal-title fs-5" id="">Editar Usuario</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form class="row g-3" method="get" action="/administrador/buscar">
+                <!--FORMULARIO-->
+                <form class="row g-3" method="post" action="/administrador/usuario/registrar">
                     <div class="col-md-6">
-                        <label for="inputState" class="form-label">Tipo Documento</label>
-                        <select id="inputState" class="form-select" name="tipo_docuemento">
-                            <option selected>VALORES...</option>
-                            <option value="1">DNI</option>
-                            <option value="2">RUC</option>
-                            <option value="3">PASAPORTE</option>
-                            <option value="4">CARNET DE EXTRANJERIA</option>
+                        <label for="" class="form-label">Tipo Documento</label>
+                        <select id="tipo_documento" class="form-select tipo_documento" name="tipo_documento" >
+                            <option selected>selecciona...</option>
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label for="inputName5" class="form-label">Nro Documento</label>
-                        <input type="text" class="form-control" id="inputName5" name="numero_documento">
+                        <label for="" class="form-label">Nro Documento</label>
+                        <input type="text" class="form-control" value="" id="numero_documento" name="numero_documento" placeholder="Ingrese su nro de documento...">
                     </div>
                     <div class="col-md-4">
-                        <label for="inputEmail5" class="form-label">Nombre</label>
-                        <input type="email" class="form-control" id="inputEmail5" name="nombre">
+                        <label for="" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre del usuario...">
                     </div>
                     <div class="col-md-4">
-                        <label for="inputPassword5" class="form-label">Apellido</label>
-                        <input type="password" class="form-control" id="inputPassword5" name="apellido">
+                        <label for="" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese apellido del usuario...">
                     </div>
                     <div class="col-4">
-                        <label for="inputAddress5" class="form-label">Telefono</label>
-                        <input type="text" class="form-control" id="inputAddres5s" placeholder="1234 Main St" name="telefono">
+                        <label for="" class="form-label">Telefono</label>
+                        <input type="text" class="form-control" id="telefono" placeholder="Ingrese telefono del usuario" name="telefono" >
                     </div>
                     <div class="col-4">
-                        <label for="inputAddress5" class="form-label">Correo</label>
-                        <input type="text" class="form-control" id="inputAddres5s" placeholder="1234 Main St" name="correo_personal">                    </div>
+                        <label for="" class="form-label">Correo</label>
+                        <input type="text" class="form-control" id="correo_personal" placeholder="Ingrese correo del usuario..." name="correo_personal">
+                    </div>
                     <div class="col-4">
-                        <label for="inputAddress2" class="form-label">Password</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name="contraseña">
+                        <label for="" class="form-label">Password</label>
+                        <input type="text" class="form-control" id="contraseña" placeholder="Ingrese password del usuario..." name="contraseña">
                     </div>
                     <div class="col-md-4">
                         <label for="inputCity" class="form-label">Fecha nacimiento</label>
-                        <input type="date" class="form-control" id="inputCity" name="fecha_nacimiento">
+                        <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento">
                     </div>
                     <div class="col-md-4">
-                        <label for="inputState" class="form-label">dependencia</label>
-                        <select id="inputState" class="form-select" name="id_dependencia">
-                            <option selected>Choose...</option>
+                        <label for="" class="form-label">dependencia</label>
+                        <select id="id_dependencia" class="form-select" name="id_dependencia">
+                            <option selected>selecciona...</option>
                             <option value="1">1FPPCS</option>
+                            <option value="2">2FPPCS</option>
+                            <option value="3">3FPPCS</option>
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <label for="inputState" class="form-label">Roles</label>
-                        <select id="inputState" class="form-select" name="id_rol">
-                            <option selected>Choose...</option>
+                        <label for="" class="form-label">Roles</label>
+                        <select id="id_rol" class="form-select" name="id_rol" type="number">
+                            <option selected>selecciona...</option>
                             <option value="1">admin</option>
+                            <option value="2">usuario</option>
+                            <option value="3">superadmin</option>
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <label for="inputState" class="form-label">Estado</label>
-                        <select id="inputState" class="form-select" name="estado_usuario">
-                            <option selected>Choose...</option>
+                        <label for="" class="form-label">Estado</label>
+                        <select id="estado_usuario" class="form-select" name="estado_usuario">
+                            <option selected>selecciona...</option>
                             <option value="1">ACTIVO</option>
+                            <option value="2">SUSPENDIDO</option>
                         </select>
                     </div>
                     <div class="text-center">
@@ -607,7 +612,7 @@
 
 <!-- Template Main JS File -->
 <script src="../assets/js/main.js"></script>
-
+<script src="../js/consultaModal.js"></script>
 </body>
 
 </html>

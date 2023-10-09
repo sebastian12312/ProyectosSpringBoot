@@ -1,4 +1,4 @@
-package com.proyecto.inventario.clases;
+package com.proyecto.web.usuarios.clases;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -26,4 +26,6 @@ public class Usuarios {
     private String  id_dependencia;
     private Integer  id_rol;
     private String estado_usuario;
+
+
 }

@@ -1,12 +1,11 @@
-package com.proyecto.inventario.controlador;
+package com.proyecto.web.usuarios.controlador;
 
-import com.proyecto.inventario.clases.Usuarios;
-import com.proyecto.inventario.servicios.UsuarioService;
+import com.proyecto.web.usuarios.clases.Usuarios;
+import com.proyecto.web.usuarios.servicios.UsuarioService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;

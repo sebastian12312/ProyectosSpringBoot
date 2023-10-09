@@ -1,8 +1,8 @@
-package com.proyecto.inventario.serviciosImplements;
+package com.proyecto.web.usuarios.serviciosImplements;
 
-import com.proyecto.inventario.clases.Usuarios;
-import com.proyecto.inventario.consultasBD.UsuarioRepository;
-import com.proyecto.inventario.servicios.UsuarioService;
+import com.proyecto.web.usuarios.clases.Usuarios;
+import com.proyecto.inventario.usuarios.consultasBD.UsuarioRepository;
+import com.proyecto.web.usuarios.servicios.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

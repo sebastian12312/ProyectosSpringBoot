@@ -1,7 +1,7 @@
-package com.proyecto.inventario.controlador;
+package com.proyecto.web.usuarios.controlador;
 
-import com.proyecto.inventario.clases.Usuarios;
-import com.proyecto.inventario.servicios.LoginService;
+import com.proyecto.web.usuarios.clases.Usuarios;
+import com.proyecto.web.usuarios.servicios.LoginService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
