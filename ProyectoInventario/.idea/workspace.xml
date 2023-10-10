@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f497b38-8d01-423c-a0f8-ff8fc2c14df2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/consultaModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/inventario/ProyectoInventarioApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/inventario/clases/Usuarios.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/inventario/consultasBD/UsuarioRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/inventario/controlador/AdministradorController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/inventario/controlador/UsuarioController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/inventario/controlador/ValidacionUsuario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/inventario/controlador/WebController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/inventario/servicios/AdministradorService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/inventario/servicios/LoginService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/inventario/servicios/UsuarioService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/inventario/serviciosImplements/AdministradorImplement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/inventario/serviciosImplements/LoginImplement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/inventario/serviciosImplements/UsuarioImplement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/administrator/usuarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/administrator/usuarios.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +135,8 @@
       <workItem from="1696809185818" duration="241000" />
       <workItem from="1696809444317" duration="678000" />
       <workItem from="1696813649159" duration="353000" />
-      <workItem from="1696814283431" duration="1410000" />
+      <workItem from="1696814283431" duration="2008000" />
+      <workItem from="1696883070964" duration="2996000" />
     </task>
     <servers />
   </component>
