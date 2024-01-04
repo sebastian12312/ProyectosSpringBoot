@@ -3,7 +3,7 @@ package com.proyecto.web.usuarios.serviciosImplements;
 import com.proyecto.web.usuarios.clases.TipoDocumentos;
 import com.proyecto.web.usuarios.clases.Usuarios;
 import com.proyecto.web.usuarios.consultasBD.TipoDocumentosRepository;
-import com.proyecto.inventario.usuarios.consultasBD.UsuarioRepository;
+import com.proyecto.web.usuarios.consultasBD.UsuarioRepository;
 import com.proyecto.web.usuarios.servicios.AdministradorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

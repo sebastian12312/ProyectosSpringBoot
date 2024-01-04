@@ -1,7 +1,7 @@
 package com.proyecto.web.usuarios.serviciosImplements;
 
 import com.proyecto.web.usuarios.clases.Usuarios;
-import com.proyecto.inventario.usuarios.consultasBD.UsuarioRepository;
+import com.proyecto.web.usuarios.consultasBD.UsuarioRepository;
 import com.proyecto.web.usuarios.servicios.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

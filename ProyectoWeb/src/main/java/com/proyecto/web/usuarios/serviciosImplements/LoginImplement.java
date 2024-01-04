@@ -12,8 +12,8 @@ public class LoginImplement implements LoginService {
     @Autowired
     private UsuarioRepository usuarioRepository;
     @Override
-    public Usuarios validacionUsuario(String numero_documento, String contraseña) {
-        Usuarios respuestaUsuario =  usuarioRepository.findUserByCodigo(numero_documento);
+    public Usuarios validacionUsuario(String correoUsuario, String contraseñaUsuario) {
+       Usuarios respuestaUsuario =  usuarioRepository.findUserByCodigo(correoUsuario,contraseñaUsuario);
        return respuestaUsuario;
 
     }

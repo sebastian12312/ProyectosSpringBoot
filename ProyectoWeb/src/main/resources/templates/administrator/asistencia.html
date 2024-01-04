@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/formularios.css">
+</head>
+
+<body>
+
+    <div class="contenedor_dashboard">
+        <div class="header_dashboard">
+            <div class="contenedor_header_dashboard">
+                <div class="titulo_header_dashboard">
+                    <div>
+                        <a class="tamaño-type-one btn_check_menu_lateral" id="btn_menu_lateral"><i class="bi bi-columns-gap"></i>
+                            <input type="checkbox" class="checkbox_menu_lateral" id="checkbox_menu_lateral">
+                        </a>
+                    </div>
+                    <div>
+                        <a>Proyectoweb</a>
+                    </div>
+                </div>
+                <div class="menu_top">
+                    <div class="contenedor_menu_top">
+                        <div>
+                            <a class="tamaño-type-one responsive_menu_off"><i class="bi bi-chat-square-text"></i></a>
+                        </div>
+                        <div>
+                            <a class="tamaño-type-one responsive_menu_off"><i class="bi bi-bell"></i></a>
+                        </div>
+                        <div class="container">
+                            <div class="btn-group">
+                                <a class=" dropdown-toggle btn-type-one usuario_dropdown" data-bs-toggle="dropdown"
+                                    data-bs-auto-close="true" aria-expanded="false" style="color: white;">Sebastian B.
+                                    G.</a>
+                                <ul class="dropdown-menu " style="width: 100%;">
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> <span>Mi
+                                                Perfil</span></a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i>
+                                            <span>Configuracion</span></a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-question-circle"></i>
+                                            <span>Ayuda!</span></a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i>
+                                            <span>Cerrar sesion</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="body_dashboard">
+            <div class="menu_lateral" id="menu_lateral">
+                <div class="contenedor_menu_lateral">
+                    <li class="contenedor_link ">
+                        <a href="" class="link_barra_lateral "><span>Dashboard</span>
+                            <i class="bi bi-speedometer2"></i>
+                        </a>
+                    </li>
+                    <li class="contenedor_link ">
+                        <a href="" class="link_barra_lateral "><span>Inventario</span>
+                            <i class="bi bi-box-seam"></i>
+                        </a>
+                    </li>
+                    <li class="contenedor_link ">
+                        <a href="" class="link_barra_lateral "><span>Asistencia</span>
+                            <i class="bi bi-people"></i>
+                        </a>
+                    </li>
+                    <li class="contenedor_link ">
+                        <a href="" class="link_barra_lateral "><span>Asignacion</span>
+                            <i class="bi bi-clipboard-check"></i>
+                        </a>
+                    </li>
+            
+                   
+                </div>
+            </div>
+            <main class="contenido_body">
+                 <!-- table -->
+        <div class="container contenedor-table-general">
+            <div class="componentes-cards container">
+                <div class="contenedor-cards ">
+                    <div class="cards text-center">
+                        <a class="d-block">Cantidad de Usuarios</a>
+                        <i class="bi bi-columns-gap"></i>
+                        <span class="d-block">10</span>
+                    </div>
+                    <div class="cards text-center">
+                        <a class="d-block">Cantidad de admin</a>
+                        <i class="bi bi-check-circle"></i>
+                        <span class="d-block">10</span>
+                    </div>
+                    <div class="cards text-center">
+                        <a class="d-block">Cantidad de Asistencia</a>
+                        <i class="bi bi-box-seam"></i>
+                        <span class="d-block">10</span>
+                    </div>
+                    <div class="cards text-center">
+                        <a class="d-block">Cantidad de Tardanzas</a>
+                        <i class="bi bi-x-octagon"></i>
+                        <span class="d-block">10</span>
+                    </div>
+                </div>               
+            </div>
+            <div class="componente-tables container">
+                <div class="contenedor-btn-table">
+                    <div class="btn-agregar">
+                        <a  type="button" data-bs-toggle="modal" data-bs-target="#AgregarItem"><span>Nuevo Item</span><i class="bi bi-plus"></i></a>
+                    </div>
+                    <div class="btn-buscar">
+                        <div>
+                            <input type="text" placeholder="Buscar...">
+                            <button class=""><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-table">
+                    <table class="tabla">
+                        <thead class="table-color">
+                            <tr>
+                                <td>#</td>
+                                <td>codigo</td>
+                                <td>Nombre</td>
+                                <td>Apellido</td>
+                                <td>Correo</td>
+                                <td>Telefono</td>
+                                 <td>Estado</td>   
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr>
+                                <td>1</td>
+                                <td>0001ss</td>
+                                <td>Producto 1</td>
+                                <td>modelo 1</td>
+                                <td>ABC</td>
+                                <td>ABC</td>
+                                <td class="btn-accion-table">
+                                    <a type="button" data-bs-toggle="modal" data-bs-target="#EditarItem"><i class="bi bi-pencil-square"></i></a>
+                                    <a href=""><i class="bi bi-eye"></i></a>                                   
+                                    <a class="descargar-item" id="21"><i class="bi bi-download"></i></a>
+                                    <a  class="eliminar-item" id="1"><i class="bi bi-trash"></i></a>
+                                </td>
+    
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0001ss</td>
+                                <td>Producto 1</td>
+                                <td>modelo 1</td>
+                                <td>ABC</td>
+                                <td>ABC</td>
+                                <td class="btn-accion-table">
+                                    <a type="button" data-bs-toggle="modal" data-bs-target="#EditarItem"><i class="bi bi-pencil-square"></i></a>
+                                    <a href=""><i class="bi bi-eye"></i></a>                                   
+                                    <a class="descargar-item" id="21"><i class="bi bi-download"></i></a>
+                                    <a  class="eliminar-item" id="1"><i class="bi bi-trash"></i></a>
+                                </td>
+    
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0001ss</td>
+                                <td>Producto 1</td>
+                                <td>modelo 1</td>
+                                <td>ABC</td>
+                                <td>ABC</td>
+                                <td class="btn-accion-table">
+                                    <a type="button" data-bs-toggle="modal" data-bs-target="#EditarItem"><i class="bi bi-pencil-square"></i></a>
+                                    <a href=""><i class="bi bi-eye"></i></a>                                   
+                                    <a class="descargar-item" id="21"><i class="bi bi-download"></i></a>
+                                    <a  class="eliminar-item" id="1"><i class="bi bi-trash"></i></a>
+                                </td>
+    
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0001ss</td>
+                                <td>Producto 1</td>
+                                <td>modelo 1</td>
+                                <td>ABC</td>
+                                <td>ABC</td>
+                                <td class="btn-accion-table">
+                                    <a type="button" data-bs-toggle="modal" data-bs-target="#EditarItem"><i class="bi bi-pencil-square"></i></a>
+                                    <a href=""><i class="bi bi-eye"></i></a>                                   
+                                    <a class="descargar-item" id="21"><i class="bi bi-download"></i></a>
+                                    <a  class="eliminar-item" id="1"><i class="bi bi-trash"></i></a>
+                                </td>
+    
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0001ss</td>
+                                <td>Producto 1</td>
+                                <td>modelo 1</td>
+                                <td>ABC</td>
+                                <td>ABC</td>
+                                <td class="btn-accion-table">
+                                    <a type="button" data-bs-toggle="modal" data-bs-target="#EditarItem"><i class="bi bi-pencil-square"></i></a>
+                                    <a href=""><i class="bi bi-eye"></i></a>                                   
+                                    <a class="descargar-item" id="21"><i class="bi bi-download"></i></a>
+                                    <a  class="eliminar-item" id="1"><i class="bi bi-trash"></i></a>
+                                </td>
+    
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0001ss</td>
+                                <td>Producto 1</td>
+                                <td>modelo 1</td>
+                                <td>ABC</td>
+                                <td>ABC</td>
+                                <td class="btn-accion-table">
+                                    <a type="button" data-bs-toggle="modal" data-bs-target="#EditarItem"><i class="bi bi-pencil-square"></i></a>
+                                    <a href=""><i class="bi bi-eye"></i></a>                                   
+                                    <a class="descargar-item" id="21"><i class="bi bi-download"></i></a>
+                                    <a  class="eliminar-item" id="1"><i class="bi bi-trash"></i></a>
+                                </td>
+    
+                            </tr>
+                        </tbody>
+    
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+       
+        <!--VENTANAS MODAL-->
+       
+            </main>
+        </div>
+
+
+    </div>
+  
+<!-- MODAL -->
+<div class="modal fade " id="AgregarItem" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <a class="modal-title fs-1 " id="staticBackdropLabel" style="font-size: 1.3rem;">Agregar Nuevo Item</a>
+          <button type="button" class="bi bi-x btn btn-dark " data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="">
+                <div class="formulario-dashboard">
+                    <div class="contenedor_formulario_dashboard">
+                        <div class="formulario_input">
+                            <label class="d-block" >Rango</label>
+                          <select name="" id="">
+                            <option selected>Escoja una opcion</option>
+                            <option value="">ADMIN</option>
+                            <option value="">USUARIO</option>
+                          </select>
+                        </div>
+                        <div class="formulario_input">
+                            <label  class="d-block" for="">Nombre </label>
+                            <input type="text">
+                        </div>
+                        <div class="formulario_input">
+                            <label  class="d-block"  for="">Apellido</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="contenedor_formulario_dashboard">
+                        <div class="formulario_input">
+                            <label  class="d-block"  for="">Correo</label>
+                            <input type="text">
+                        </div>
+                        <div class="formulario_input">
+                            <label  class="d-block"  for="">Telefono</label>
+                            <input type="text">
+                        </div>
+                        <div class="formulario_input">
+                            <label  class="d-block"  for="">Password</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                   
+                    <div class="contenedor_formulario_dashboard">
+                        <div class="formulario_input">
+                            <label  class="d-block"  for="">Fecha de registro</label>
+                            <input type="date">
+                        </div>
+    
+                        <div class="formulario_input">
+                            <label class="d-block" >Estado</label>
+                          <select name="" id="">
+                            <option selected>Escoja una opcion</option>
+                            <option value="">ACTIVO</option>
+                            <option value="">SUSPENDIDo</option>
+                          </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+           
+        </div>
+        <div class="modal-footer">                  
+          <button type="button" class="btn-aceptar agregar-item" data-bs-dismiss="modal">aceptar</button>
+          <button type="button" class="btn-eliminar" data-bs-dismiss="modal">cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade " id="EditarItem" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <a class="modal-title fs-1 " id="staticBackdropLabel" style="font-size: 1.3rem;">Agregar Nuevo Item</a>
+          <button type="button" class="bi bi-x btn btn-dark " data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div class="formulario-dashboard">
+                <div class="contenedor_formulario_dashboard">
+                    <div class="formulario_input">
+                        <label class="d-block" >Rango</label>
+                      <select name="" id="">
+                        <option selected>Escoja una opcion</option>
+                        <option value="">ADMIN</option>
+                        <option value="">USUARIO</option>
+                      </select>
+                    </div>
+                    <div class="formulario_input">
+                        <label  class="d-block" for="">Nombre </label>
+                        <input type="text">
+                    </div>
+                    <div class="formulario_input">
+                        <label  class="d-block"  for="">Apellido</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="contenedor_formulario_dashboard">
+                    <div class="formulario_input">
+                        <label  class="d-block"  for="">Correo</label>
+                        <input type="text">
+                    </div>
+                    <div class="formulario_input">
+                        <label  class="d-block"  for="">Telefono</label>
+                        <input type="text">
+                    </div>
+                    <div class="formulario_input">
+                        <label  class="d-block"  for="">Password</label>
+                        <input type="text">
+                    </div>
+                </div>
+               
+                <div class="contenedor_formulario_dashboard">
+                    <div class="formulario_input">
+                        <label  class="d-block"  for="">Fecha de registro</label>
+                        <input type="date">
+                    </div>
+
+                    <div class="formulario_input">
+                        <label class="d-block" >Estado</label>
+                      <select name="" id="">
+                        <option selected>Escoja una opcion</option>
+                        <option value="">ACTIVO</option>
+                        <option value="">SUSPENDIDo</option>
+                      </select>
+                    </div>
+                </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">                  
+          <button type="button" class="btn-aceptar agregar-item" data-bs-dismiss="modal">aceptar</button>
+          <button type="button" class="btn-eliminar" data-bs-dismiss="modal">cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!--sweet alert js-->
+    <script src="js/menuLateral.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/sweetAlert.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/js/bootstrap.esm.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+
+</html>

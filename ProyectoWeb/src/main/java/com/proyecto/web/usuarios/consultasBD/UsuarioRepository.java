@@ -11,11 +11,15 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuarios,String> {
+
+//    validacion usuario
+    @Query("SELECT u FROM Usuario u WHERE u.correo = :correoUsuario AND u.contraseña = :contraseñaUsuario")
+    Usuarios findUserByCodigo(@Param("correoUsuario") String correoUsuario, @Param("contraseñaUsuario") String contraseñaUsuario);
+
     @Query("SELECT i FROM Usuarios i ")
     List<Usuarios> findUsuarios();
 
-    @Query("SELECT u FROM Usuarios u WHERE u.numero_documento = :numero_documento ")
-    Usuarios findUserByCodigo(@Param("numero_documento") String numero_documento);
+
     @Modifying
     @Transactional
     @Query("DELETE FROM Usuarios c WHERE c.codigo_usuario = :codigo_usuario")
