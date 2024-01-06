@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>incio</title>
+    
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!--sweet alert-->
+    <link rel="stylesheet" href="sweetalert2.min.css">
+</head>
+<body>
+    
+    <div class="contenedor-login">
+        <div class="login">
+            <form action="/login" method="POST" class="iniciar-sesion">
+                <div class="titulo_login">
+                    <a >Bienvenido de Vuelta</a>
+                    <p>Inicie Sesion para continuar</p>
+                </div>
+                <div class="componente-login">
+                    <label for="" class="d-block"><Strong>Usuario*:</Strong></label>
+                    <input type="text" placeholder="Ingrese su usuario" name="codigoUsuario">
+                </div>
+
+                <div class="componente-login">
+                    <label for="" class="d-block"><strong>Contraseña*:</strong></label>
+                    <input type="password"id="" placeholder="Ingrese su contraseña" name="contraseñaUsuario">
+                </div>
+                <div class="datos-adicionales">
+                    <p class="d-block">Olvidastes tu contraseña? <a href="">Recuperar Aqui!</a></p>
+                    <p class="d-block">No tienes Usuario? <a id="click">Registrate Aqui!</a></p>
+                </div>
+                <div class="button-login">
+                    <button >Iniciar sesion</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        var click = document.getElementById("click");
+ click.addEventListener("click",()=>{
+    Swal.fire({
+  title: "The Internet?",
+  text: "That thing is still around?",
+  icon: "question"
+});
+
+ })
+        
+    </script>
+
+    <!--sweet alert js-->
+    <script src="sweetalert2.min.js"></script>
+    
+  
+    <script src="bootstrap/js/bootstrap.min.js" ></script>
+    <script src="bootstrap/js/bootstrap.js" ></script>
+</body>
+</html>
