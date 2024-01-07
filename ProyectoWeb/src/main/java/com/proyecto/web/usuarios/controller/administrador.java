@@ -13,9 +13,15 @@ public class administrador {
 
     @GetMapping(value = "/main")
     private String administrador(HttpSession session, Model model){
-        String nombreUsuario = (String) session.getAttribute("nombreUsuario");
+       String nombreUsuario = (String) session.getAttribute("nombreUsuario");
+       String codigoUsuario = (String) session.getAttribute("codigoUsuario");
+       session.setAttribute("codigoUsuario",codigoUsuario);
        session.setAttribute("nombreUsuario",nombreUsuario);
-        return "administrator/dashboard";
+       model.addAttribute("user", nombreUsuario);
+
+       return "administrator/dashboard";
+
+
     }
     @GetMapping(value = "/usuarios")
     private String usuarios(HttpSession session, Model model){

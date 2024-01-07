@@ -1,70 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dashboard</title>
+<head th:replace="/fragmentos/administrador/head :: head"></head>
 
-    <!-- css -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="bootstrap/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/cards.css">
-    <link rel="stylesheet" href="css/table.css">
-    <link rel="stylesheet" href="css/formularios.css">
-</head>
+<body th:if="${session.codigoUsuario != null}">
+<div class="contenedor_dashboard">
+    <!-- fragmentos       -->
+    <div th:replace="/fragmentos/administrador/barra-top :: div"></div>
+    <!---->
 
-<body>
-
-    <div class="contenedor_dashboard">
-        <div class="header_dashboard">
-            <div class="contenedor_header_dashboard">
-                <div class="titulo_header_dashboard">
-                    <div>
-                        <a class="tamaño-type-one btn_check_menu_lateral" id="btn_menu_lateral"><i class="bi bi-columns-gap"></i>
-                            <input type="checkbox" class="checkbox_menu_lateral" id="checkbox_menu_lateral">
-                        </a>
-                    </div>
-                    <div>
-                        <a>Proyectoweb</a>
-                    </div>
-                </div>
-                <div class="menu_top">
-                    <div class="contenedor_menu_top">
-                        <div>
-                            <a class="tamaño-type-one responsive_menu_off"><i class="bi bi-chat-square-text"></i></a>
-                        </div>
-                        <div>
-                            <a class="tamaño-type-one responsive_menu_off"><i class="bi bi-bell"></i></a>
-                        </div>
-                        <div class="container">
-                            <div class="btn-group">
-                                <a class=" dropdown-toggle btn-type-one usuario_dropdown" data-bs-toggle="dropdown"
-                                    data-bs-auto-close="true" aria-expanded="false" style="color: white;">Sebastian B.
-                                    G.</a>
-                                <ul class="dropdown-menu " style="width: 100%;">
-                                    <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> <span>Mi
-                                                Perfil</span></a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i>
-                                            <span>Configuracion</span></a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="bi bi-question-circle"></i>
-                                            <span>Ayuda!</span></a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i>
-                                            <span>Cerrar sesion</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="body_dashboard">
+    <div class="body_dashboard">
             <div class="menu_lateral" id="menu_lateral">
                 <div class="contenedor_menu_lateral">
                     <li class="contenedor_link ">
@@ -419,6 +365,9 @@
     <script src="bootstrap/js/bootstrap.esm.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/error.js"></script>
 </body>
-
+<body  th:unless="${nombreUsuario != null}">
+<div th:replace="/fragmentos/administrador/error-404 :: div"></div>
+</body>
 </html>

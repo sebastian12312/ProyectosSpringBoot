@@ -30,6 +30,7 @@ public class login {
 
                 if(user.getRol().equals("administrador")){
                     session.setAttribute("nombreUsuario",user.getNombre());
+                    session.setAttribute("codigoUsuario",user.getCodigo());
                     return "redirect:/administrador/main";
                 }else if(user.getRol().equals("usuario")){
                     return "redirect:/usuario/home";

@@ -4,7 +4,7 @@
 
 <head th:replace="/fragmentos/administrador/head :: head"></head>
 
-<body>
+<body th:if="${session.codigoUsuario != null}">
 
     <div class="contenedor_dashboard">
         <!-- fragmentos       -->
@@ -70,6 +70,7 @@
 
     <!--sweet alert js-->
     <script src="../js/menuLateral.js"></script>
+    <script src="../js/error.js"></script>
     <script src="../https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/sweetAlert.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -80,8 +81,10 @@
     <script src="../js/charts.js"></script>
     <script src="../bootstrap/chart/chart.umd.js"></script>
     <script src="../bootstrap/chart/chart.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+<body  th:unless="${nombreUsuario != null}">
+    <div th:replace="/fragmentos/administrador/error-404 :: div"></div>
 </body>
 
 </html>
