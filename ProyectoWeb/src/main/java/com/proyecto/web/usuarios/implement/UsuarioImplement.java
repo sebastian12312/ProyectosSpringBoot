@@ -5,6 +5,9 @@ import com.proyecto.web.usuarios.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.proyecto.web.usuarios.clases.Usuario;
+
+import java.util.List;
+
 @Service
 public class UsuarioImplement implements UsuarioService {
 
@@ -31,6 +34,17 @@ public class UsuarioImplement implements UsuarioService {
     @Override
     public String consultaUsuario(String codigoUsuario) {
         return null;
+    }
+
+    @Override
+    public List<Usuario> listaUsuario() {
+       List<Usuario> usuarios = usuarioRepository.listaUsuario();
+       return usuarios;
+    }
+
+    @Override
+    public void eliminarUsuario(String codigoUsuario) {
+        usuarioRepository.deleteBycodigo_usuario(codigoUsuario);
     }
 
 

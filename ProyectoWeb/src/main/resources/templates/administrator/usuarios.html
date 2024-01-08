@@ -4,9 +4,9 @@
 
 <head th:replace="/fragmentos/administrador/head :: head"></head>
 
-<body th:if="${session.codigoUsuario != null}">
+<body>
 
-    <div class="contenedor_dashboard">
+    <div class="contenedor_dashboard"  th:if="${session.codigoUsuario != null}">
         <!-- fragmentos       -->
         <div th:replace="/fragmentos/administrador/barra-top :: div"></div>
         <!---->
@@ -92,95 +92,21 @@
                         </thead>
                         <tbody>
                         
-                            <tr>
-                                <td>1</td>
-                                <td>0001ss</td>
-                                <td>Producto 1</td>
-                                <td>modelo 1</td>
-                                <td>ABC</td>
-                                <td>ABC</td>
+                            <tr th:each="usuario, iterStat : ${listaUsuario}">
+                                <td th:text="${iterStat.count}"></td>
+                                <td  th:text="${usuario.codigo}"></td>
+                                <td  th:text="${usuario.nombre}"></td>
+                                <td  th:text="${usuario.apellido}"></td>
+                                <td  th:text="${usuario.correo}"></td>
+                                <td  th:text="${usuario.telefono}"></td>
                                 <td class="btn-accion-table">
                                     <a type="button" data-bs-toggle="modal" data-bs-target="#EditarItem"><i class="bi bi-pencil-square"></i></a>
                                     <a href=""><i class="bi bi-eye"></i></a>                                   
                                     <a class="descargar-item" id="21"><i class="bi bi-download"></i></a>
-                                    <a  class="eliminar-item" id="1"><i class="bi bi-trash"></i></a>
+                                    <a class="eliminar-item" th:data-codigousuario="${usuario.codigo}">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
                                 </td>
-    
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>0001ss</td>
-                                <td>Producto 1</td>
-                                <td>modelo 1</td>
-                                <td>ABC</td>
-                                <td>ABC</td>
-                                <td class="btn-accion-table">
-                                    <a type="button" data-bs-toggle="modal" data-bs-target="#EditarItem"><i class="bi bi-pencil-square"></i></a>
-                                    <a href=""><i class="bi bi-eye"></i></a>                                   
-                                    <a class="descargar-item" id="21"><i class="bi bi-download"></i></a>
-                                    <a  class="eliminar-item" id="1"><i class="bi bi-trash"></i></a>
-                                </td>
-    
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>0001ss</td>
-                                <td>Producto 1</td>
-                                <td>modelo 1</td>
-                                <td>ABC</td>
-                                <td>ABC</td>
-                                <td class="btn-accion-table">
-                                    <a type="button" data-bs-toggle="modal" data-bs-target="#EditarItem"><i class="bi bi-pencil-square"></i></a>
-                                    <a href=""><i class="bi bi-eye"></i></a>                                   
-                                    <a class="descargar-item" id="21"><i class="bi bi-download"></i></a>
-                                    <a  class="eliminar-item" id="1"><i class="bi bi-trash"></i></a>
-                                </td>
-    
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>0001ss</td>
-                                <td>Producto 1</td>
-                                <td>modelo 1</td>
-                                <td>ABC</td>
-                                <td>ABC</td>
-                                <td class="btn-accion-table">
-                                    <a type="button" data-bs-toggle="modal" data-bs-target="#EditarItem"><i class="bi bi-pencil-square"></i></a>
-                                    <a href=""><i class="bi bi-eye"></i></a>                                   
-                                    <a class="descargar-item" id="21"><i class="bi bi-download"></i></a>
-                                    <a  class="eliminar-item" id="1"><i class="bi bi-trash"></i></a>
-                                </td>
-    
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>0001ss</td>
-                                <td>Producto 1</td>
-                                <td>modelo 1</td>
-                                <td>ABC</td>
-                                <td>ABC</td>
-                                <td class="btn-accion-table">
-                                    <a type="button" data-bs-toggle="modal" data-bs-target="#EditarItem"><i class="bi bi-pencil-square"></i></a>
-                                    <a href=""><i class="bi bi-eye"></i></a>                                   
-                                    <a class="descargar-item" id="21"><i class="bi bi-download"></i></a>
-                                    <a  class="eliminar-item" id="1"><i class="bi bi-trash"></i></a>
-                                </td>
-    
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>0001ss</td>
-                                <td>Producto 1</td>
-                                <td>modelo 1</td>
-                                <td>ABC</td>
-                                <td>ABC</td>
-                                <td class="btn-accion-table">
-                                    <a type="button" data-bs-toggle="modal" data-bs-target="#EditarItem"><i class="bi bi-pencil-square"></i></a>
-                                    <a href=""><i class="bi bi-eye"></i></a>                                   
-                                    <a class="descargar-item" id="21"><i class="bi bi-download"></i></a>
-                                    <a  class="eliminar-item" id="1"><i class="bi bi-trash"></i></a>
-                                </td>
-    
                             </tr>
                         </tbody>
     
@@ -352,8 +278,9 @@
     <script src="../bootstrap/chart/chart.umd.js"></script>
     <script src="../bootstrap/chart/chart.js"></script>
     <script src="../js/error.js"></script>
+    <div th:unless="${session.codigoUsuario != null}">
+        <div th:replace="/fragmentos/administrador/error404 :: div"></div>
+    </div>
 </body>
-<body  th:unless="${nombreUsuario != null}">
-<div th:replace="/fragmentos/administrador/error-404 :: div"></div>
-</body>
+
 </html>

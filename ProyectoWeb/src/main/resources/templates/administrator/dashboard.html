@@ -4,9 +4,9 @@
 
 <head th:replace="/fragmentos/administrador/head :: head"></head>
 
-<body th:if="${session.codigoUsuario != null}">
+<body>
 
-    <div class="contenedor_dashboard">
+    <div class="contenedor_dashboard"  th:if="${session.codigoUsuario != null}">
         <!-- fragmentos       -->
         <div th:replace="/fragmentos/administrador/barra-top :: div"></div>
         <!---->
@@ -64,7 +64,7 @@
 
 
     </div>
-  
+
 <!-- MODAL -->
 
 
@@ -82,9 +82,10 @@
     <script src="../bootstrap/chart/chart.umd.js"></script>
     <script src="../bootstrap/chart/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <div th:unless="${session.codigoUsuario != null}">
+        <div th:replace="/fragmentos/administrador/error404 :: div"></div>
+    </div>
 </body>
-<body  th:unless="${nombreUsuario != null}">
-    <div th:replace="/fragmentos/administrador/error-404 :: div"></div>
-</body>
+
 
 </html>

@@ -1,0 +1,179 @@
+.modal_administrador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(182, 182, 182, 0.4);
+    display: none;
+}
+.AbrirModal{
+    display: flex;
+}
+.formulario_contacto_administrador {
+    border: 1px solid rgb(182, 182, 182);
+    border-radius: 5px;
+    width: 500px;
+    height: 200px;
+    height: auto;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 5px rgb(180, 180, 180);
+    animation: AbrirModal 1.5s;
+
+}
+@keyframes AbrirModal {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.datos_contacto_administrador label {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.datos_contacto_administrador input {
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid rgb(182, 182, 182);
+    border-radius: 5px;
+    outline: none;
+}
+
+.btn_contacto_administrador {
+    text-align: center;
+    margin: 20px;
+}
+
+.btn_contacto_administrador input {
+    background-color: rgb(38, 122, 248);
+    color: white;
+    padding: 5px 20px;
+    border: 1px solid rgb(38, 122, 248);
+    cursor: pointer;
+}
+
+.btn_contacto_administrador input:hover {
+    transition: 0.5s;
+    background-color: rgb(38, 122, 248);
+    box-shadow: 0px 0px 3px 1px rgb(38, 122, 248);
+}
+@media  (max-width: 520px) {
+    .formulario_contacto_administrador{
+        width:100%
+    }
+}
+
+/*modal*/
+.contenedor_modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(219, 219, 219, 0.4);
+    display: none;
+}
+.Modal_Open{
+    display: flex;
+}
+/*modal registrar*/
+
+
+.modal_tamano_add {
+    width: 600px;
+    border: 1px solid #dddd;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+}
+.contenedor_division_formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+.contenedor_division_formulario_{
+    display: grid;
+    grid-template-columns: 100%;
+}
+.division_fomulario {
+    margin: 10px;
+}
+
+.division_fomulario label {
+    display: block;
+    color:rgb(77, 77, 77);
+    margin-bottom: 10px;
+}
+
+.division_fomulario input {
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f0f0f0dd;
+    border: 1px solid #cccc;
+    padding: 15px 20px;
+    color: black;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.division_fomulario select {
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f0f0f0dd;
+    border: 1px solid #cccc;
+    padding: 15px 20px;
+    color: var(--color-letra-dark);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.division_fomulario input::placeholder {
+    color:rgb(75, 75, 75);
+}
+
+.btn_formulario {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn_formulario button {
+    outline: none;
+    width: 100%;
+    border: none;
+    font-size: 1.2rem;
+    color: white;
+    background-color: rgb(0, 119, 255);
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+.view_eye input {
+    position: relative;
+}
+
+.view_eye a {
+    position: absolute;
+    margin-left: -30px;
+    margin-top: 15px;
+    color: #b1b1b1dd;
+    cursor: pointer;
+}

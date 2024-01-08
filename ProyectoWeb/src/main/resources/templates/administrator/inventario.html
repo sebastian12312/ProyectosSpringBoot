@@ -366,8 +366,9 @@
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/error.js"></script>
+<div th:unless="${session.codigoUsuario != null}">
+    <div th:replace="/fragmentos/administrador/error404 :: div"></div>
+</div>
 </body>
-<body  th:unless="${nombreUsuario != null}">
-<div th:replace="/fragmentos/administrador/error-404 :: div"></div>
-</body>
+
 </html>
