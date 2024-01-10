@@ -68,12 +68,14 @@
             <div class="componente-tables container">
                 <div class="contenedor-btn-table">
                     <div class="btn-agregar">
-                        <a  type="button" data-bs-toggle="modal" data-bs-target="#AgregarItem"><span>Nuevo Item</span><i class="bi bi-plus"></i></a>
+                        <a  type="button" data-bs-toggle="modal" data-bs-target="#AgregarItem" ><span>Nuevo Item</span><i class="bi bi-plus"></i></a>
                     </div>
                     <div class="btn-buscar">
                         <div>
-                            <input type="text" placeholder="Buscar...">
-                            <button class=""><i class="bi bi-search"></i></button>
+                            <form method="GET" action="/administrador/usuarios/buscar">
+                                <input type="text" placeholder="Buscar por codigo..." name="codigoUsuario">
+                                <button class=""><i class="bi bi-search"></i></button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -91,23 +93,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                        
-                            <tr th:each="usuario, iterStat : ${listaUsuario}">
-                                <td th:text="${iterStat.count}"></td>
-                                <td  th:text="${usuario.codigo}"></td>
-                                <td  th:text="${usuario.nombre}"></td>
-                                <td  th:text="${usuario.apellido}"></td>
-                                <td  th:text="${usuario.correo}"></td>
-                                <td  th:text="${usuario.telefono}"></td>
-                                <td class="btn-accion-table">
-                                    <a type="button" data-bs-toggle="modal" data-bs-target="#EditarItem"><i class="bi bi-pencil-square"></i></a>
-                                    <a href=""><i class="bi bi-eye"></i></a>                                   
-                                    <a class="descargar-item" id="21"><i class="bi bi-download"></i></a>
-                                    <a class="eliminar-item" th:data-codigousuario="${usuario.codigo}">
-                                        <i class="bi bi-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
+                        <tr  th:each="usuario, iterStat : ${listaUsuario}">
+                            <!-- Código para mostrar la lista de usuarios -->
+                            <td th:text="${iterStat.count}"></td>
+                            <td  th:text="${usuario.codigo}"></td>
+                            <td  th:text="${usuario.nombre}"></td>
+                            <td  th:text="${usuario.apellido}"></td>
+                            <td  th:text="${usuario.correo}"></td>
+                            <td  th:text="${usuario.telefono}"></td>
+                            <td class="btn-accion-table">
+                                <a type="button" data-bs-toggle="modal" data-bs-target="#EditarItem"><i class="bi bi-pencil-square"></i></a>
+                                <a href=""><i class="bi bi-eye"></i></a>
+                                <a class="descargar-item" id="21"><i class="bi bi-download"></i></a>
+                                <a class="eliminar-item" th:data-codigousuario="${usuario.codigo}">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+
                         </tbody>
     
                     </table>
@@ -124,7 +127,7 @@
 
 
     </div>
-  
+
 <!-- MODAL -->
 <div class="modal fade " id="AgregarItem" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -134,57 +137,58 @@
           <button type="button" class="bi bi-x btn btn-dark " data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form action="">
+            <form action="/administrador/usuarios/registrar" method="post">
                 <div class="formulario-dashboard">
                     <div class="contenedor_formulario_dashboard">
                         <div class="formulario_input">
                             <label class="d-block" >Rango</label>
-                          <select name="" id="">
+                          <select name="rol" id="" >
                             <option selected>Escoja una opcion</option>
-                            <option value="">ADMIN</option>
-                            <option value="">USUARIO</option>
+                            <option value="administrador">ADMIN</option>
+                            <option value="usuario">USUARIO</option>
                           </select>
                         </div>
                         <div class="formulario_input">
-                            <label  class="d-block" for="">Nombre </label>
-                            <input type="text">
+                            <label  class="d-block nombre-agregar" for="">Nombre </label>
+                            <input type="text" name="nombre">
                         </div>
                         <div class="formulario_input">
                             <label  class="d-block"  for="">Apellido</label>
-                            <input type="text">
+                            <input type="text" name="apellido">
                         </div>
                     </div>
                     <div class="contenedor_formulario_dashboard">
                         <div class="formulario_input">
                             <label  class="d-block"  for="">Correo</label>
-                            <input type="text">
+                            <input type="text" name="correo">
                         </div>
                         <div class="formulario_input">
                             <label  class="d-block"  for="">Telefono</label>
-                            <input type="text">
+                            <input type="text" name="telefono">
                         </div>
                         <div class="formulario_input">
                             <label  class="d-block"  for="">Password</label>
-                            <input type="text">
+                            <input type="text" name="contraseña">
                         </div>
                     </div>
                    
                     <div class="contenedor_formulario_dashboard">
                         <div class="formulario_input">
-                            <label  class="d-block"  for="">Fecha de registro</label>
-                            <input type="date">
+                            <label  class="d-block"  for="">codigo</label>
+                            <input type="text" name="codigo">
                         </div>
     
                         <div class="formulario_input">
                             <label class="d-block" >Estado</label>
-                          <select name="" id="">
+                          <select name="estado" id="">
                             <option selected>Escoja una opcion</option>
-                            <option value="">ACTIVO</option>
-                            <option value="">SUSPENDIDo</option>
+                            <option value="activo">ACTIVO</option>
+                            <option value="suspendido">SUSPENDIDo</option>
                           </select>
                         </div>
                     </div>
                 </div>
+                <input type="submit" value="ok">
             </form>
            
         </div>
@@ -200,7 +204,7 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content ">
         <div class="modal-header">
-          <a class="modal-title fs-1 " id="staticBackdropLabel" style="font-size: 1.3rem;">Agregar Nuevo Item</a>
+          <a class="modal-title fs-1 " id="staticBackdropLabel" style="font-size: 1.3rem;" >Agregar Nuevo Item</a>
           <button type="button" class="bi bi-x btn btn-dark " data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -209,7 +213,7 @@
                 <div class="contenedor_formulario_dashboard">
                     <div class="formulario_input">
                         <label class="d-block" >Rango</label>
-                      <select name="" id="">
+                      <select name="" id="" class="rango-consulta">
                         <option selected>Escoja una opcion</option>
                         <option value="">ADMIN</option>
                         <option value="">USUARIO</option>
@@ -217,37 +221,32 @@
                     </div>
                     <div class="formulario_input">
                         <label  class="d-block" for="">Nombre </label>
-                        <input type="text">
+                        <input type="text" class="nombre-consulta">
                     </div>
                     <div class="formulario_input">
                         <label  class="d-block"  for="">Apellido</label>
-                        <input type="text">
+                        <input type="text" class="apellido-consuta">
                     </div>
                 </div>
                 <div class="contenedor_formulario_dashboard">
                     <div class="formulario_input">
                         <label  class="d-block"  for="">Correo</label>
-                        <input type="text">
+                        <input type="text" class="correo-consulta">
                     </div>
                     <div class="formulario_input">
                         <label  class="d-block"  for="">Telefono</label>
-                        <input type="text">
+                        <input type="text" class="telefono-consulta">
                     </div>
                     <div class="formulario_input">
                         <label  class="d-block"  for="">Password</label>
-                        <input type="text">
+                        <input type="text" class="password-consulta">
                     </div>
                 </div>
                
                 <div class="contenedor_formulario_dashboard">
                     <div class="formulario_input">
-                        <label  class="d-block"  for="">Fecha de registro</label>
-                        <input type="date">
-                    </div>
-
-                    <div class="formulario_input">
                         <label class="d-block" >Estado</label>
-                      <select name="" id="">
+                      <select name="" id="" class="estado-consulta">
                         <option selected>Escoja una opcion</option>
                         <option value="">ACTIVO</option>
                         <option value="">SUSPENDIDo</option>
@@ -266,6 +265,7 @@
   </div>
     <!--sweet alert js-->
     <script src="../js/menuLateral.js"></script>
+    <script src="../js/consultas.js"></script>
     <script src="../https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/sweetAlert.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>

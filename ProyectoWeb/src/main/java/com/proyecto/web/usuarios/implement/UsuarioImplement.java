@@ -1,12 +1,16 @@
 package com.proyecto.web.usuarios.implement;
 
+import com.proyecto.web.usuarios.clases.users;
+import com.proyecto.web.usuarios.repository.Users;
 import com.proyecto.web.usuarios.repository.UsuarioRepository;
 import com.proyecto.web.usuarios.service.UsuarioService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.proyecto.web.usuarios.clases.Usuario;
 
 import java.util.List;
+
 
 @Service
 public class UsuarioImplement implements UsuarioService {
@@ -45,6 +49,22 @@ public class UsuarioImplement implements UsuarioService {
     @Override
     public void eliminarUsuario(String codigoUsuario) {
         usuarioRepository.deleteBycodigo_usuario(codigoUsuario);
+    }
+
+    @Override
+    public Usuario buscarUsuario(String codigoUsuario) {
+        Usuario user = usuarioRepository.findBuscarUsuario(codigoUsuario);
+        return user;
+    }
+
+    @Autowired
+    private Users usera ;
+    @Override
+    public Boolean agregarUsuario(String id, String nombre, String apellido, String correo) {
+        users userasd = new users(nombre, apellido, correo);
+        usera.save(userasd);
+
+        return true;
     }
 
 

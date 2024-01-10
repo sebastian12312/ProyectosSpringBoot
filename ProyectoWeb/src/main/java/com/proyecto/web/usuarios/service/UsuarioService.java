@@ -10,4 +10,6 @@ public interface UsuarioService {
      String consultaUsuario(String codigoUsuario);
      List<Usuario> listaUsuario();
      void eliminarUsuario(String codigoUsuario);
+     Usuario buscarUsuario(String codigoUsuario);
+     Boolean agregarUsuario(String id, String nombre, String apellido, String correo);
 }

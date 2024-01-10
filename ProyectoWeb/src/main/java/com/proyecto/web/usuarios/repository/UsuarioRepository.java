@@ -24,4 +24,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario,String> {
     @Transactional
     @Query("DELETE FROM Usuario c WHERE c.codigo = :codigoUsuario")
     void deleteBycodigo_usuario(@Param("codigoUsuario") String codigoUsuario);
+
+    @Query("SELECT u FROM Usuario u WHERE u.codigo = :codigoUsuario ")
+    Usuario  findBuscarUsuario(@Param("codigoUsuario") String codigoUsuario);
 }

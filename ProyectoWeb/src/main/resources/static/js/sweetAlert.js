@@ -26,7 +26,9 @@ for (let item of eliminarItem) {
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`Error: ${response.statusText}`);
+
                         }
+
                         return response.text();
                     })
                     .then(data => {
@@ -36,7 +38,9 @@ for (let item of eliminarItem) {
                             icon: "success"
                         });
                         // Puedes recargar la página o actualizar la lista de usuarios aquí si es necesario
-                        location.reload();
+                         setTimeout(function(){
+                         location.reload();
+                         },3000)
                     })
                     .catch(error => {
                         console.error(error);
